@@ -6,6 +6,7 @@ from adafruit_display_shapes.roundrect import RoundRect
 from adafruit_display_shapes.line import Line
 from adafruit_display_shapes.polygon import Polygon
 from adafruit_display_shapes.rect import Rect
+import time
 
 
 BORDER = 20
@@ -47,3 +48,29 @@ thanksgiving.append(base)
 
 stem = RoundRect(115, 40, 10, 20, 5, fill = 0x30860e, outline = None, stroke = 0)
 thanksgiving.append(stem)
+
+i = 5
+r = 2
+while True:
+    third.x -= i
+    overlay.x -= i
+    bottom1.x -= i
+    bottom2.x -= i
+    second.x -= i
+    base.x -= i
+    stem.x-= i
+    time.sleep(0.05)
+        
+    if stem.x < 0 or stem.x > 240:
+        i *= -1
+    
+    third.y += r
+    overlay.y += r
+    bottom1.y += r
+    bottom2.y += r
+    second.y += r
+    base.y += r
+    stem.y += r
+    time.sleep(0.0005)
+    if base.y > 135 or base.y < 77:
+        r *= -1
