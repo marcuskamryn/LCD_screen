@@ -65,14 +65,14 @@ while True:
         i *= -1
         
     if stem.x == 0:
-        ground.fill = 0x314e32
-        overlay.fill = 0x314e32
-        color_palette[0] = 0x333361
-    
-    if stem.x == 240:
         ground.fill = 0x4c8a33
         overlay.fill = 0x4c8a33
         color_palette[0] = BACKGROUND_COLOR
+    
+    if stem.x == 240:
+        ground.fill = 0x314e32
+        overlay.fill = 0x314e32
+        color_palette[0] = 0x333361
     
     third.y += r
     overlay.y += r
